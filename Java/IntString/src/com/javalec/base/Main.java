@@ -14,7 +14,7 @@ public class Main {
 	System.out.println(str3 + str1);
 	
 	int num2 = Integer.parseInt(str1); // 숫자로 변경
-	System.out.println(num1 + num2);
+	System.out.println(num1 + Integer.parseInt(str1));
 
 
 	}
