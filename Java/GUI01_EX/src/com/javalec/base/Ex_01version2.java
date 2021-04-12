@@ -89,7 +89,6 @@ public class Ex_01version2 {
 		
 		
 		JOptionPane.showMessageDialog(null, "숫자만 입력하세요!","주의사항", JOptionPane.INFORMATION_MESSAGE);
-		
 	}
 	private JTextField getTfNum1() {
 		if (tfNum1 == null) {
@@ -103,7 +102,6 @@ public class Ex_01version2 {
 				public void keyTyped(KeyEvent e) {
 					if(e.getKeyChar()>='0' && e.getKeyChar()<='9') {						
 					} 
-					// Char로 받아도 숫자 0~9로 인식이 되는건가?
 					// 백스페이스를 입력을 가능하게 하는 방법은 무엇인가?
 					
 					else {
@@ -210,9 +208,12 @@ public class Ex_01version2 {
 					
 					lblSign.setText("%");
 					tfResult1.setText(tfNum1.getText());
+					if(Integer.parseInt(tfNum2.getText())==0) {
+						message("no");
+					}
 					tfResult2.setText(tfNum2.getText());
 					tfResult3.setText(calc.div(tfNum1.getText(),tfNum2.getText()));
-					//0입력 받았을 때 메세지창 띄우기 하는방법
+					
 				}
 			});
 			Div.setBounds(365, 25, 69, 58);
@@ -262,4 +263,8 @@ public class Ex_01version2 {
 		}
 		return lblNewLabel_2_1;
 	}
+	private void message(String str1){
+		JOptionPane.showMessageDialog(null, str1);
+	}
+	
 }
