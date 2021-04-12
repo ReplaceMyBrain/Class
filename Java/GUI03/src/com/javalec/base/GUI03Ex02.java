@@ -25,7 +25,6 @@ public class GUI03Ex02 {
 	private JLabel lbResult3;
 	
 	Calc calc =new Calc();
-	int i;
 	/**
 	 * Launch the application.
 	 */
@@ -91,7 +90,7 @@ public class GUI03Ex02 {
 			cbAdd = new JCheckBox("Add");
 			cbAdd.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-				
+					calcOrder();
 				}
 			});
 			cbAdd.setBounds(178, 27, 128, 23);
@@ -103,6 +102,7 @@ public class GUI03Ex02 {
 			cbSub = new JCheckBox("Sub");
 			cbSub.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					calcOrder();
 				}
 			});
 			cbSub.setBounds(178, 65, 128, 23);
@@ -114,6 +114,7 @@ public class GUI03Ex02 {
 			cbMul = new JCheckBox("Mul");
 			cbMul.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					calcOrder();
 				}
 			});
 			cbMul.setBounds(316, 27, 128, 23);
@@ -125,6 +126,7 @@ public class GUI03Ex02 {
 			cbDiv = new JCheckBox("Div");
 			cbDiv.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					calcOrder();
 				}
 			});
 			cbDiv.setBounds(316, 65, 128, 23);
@@ -163,15 +165,25 @@ public class GUI03Ex02 {
 		return lbResult3;
 	}
 	public void calcOrder() {
-		
 		ArrayList<String> arrayList = new ArrayList<String>();
-		String add, sub, mul, div;
 		
-		if(cbAdd.isSelected()==true);
+		if(cbAdd.isSelected()==true) {
+			arrayList.add(calc.add(tfNum1.getText(),tfNum2.getText()));
+		}if(cbSub.isSelected()==true) {
+			arrayList.add(calc.sub(tfNum1.getText(),tfNum2.getText()));
+		}if(cbMul.isSelected()==true) {
+			arrayList.add(calc.mul(tfNum1.getText(),tfNum2.getText()));
+		}if(cbDiv.isSelected()==true) {
+			arrayList.add(calc.div(tfNum1.getText(),tfNum2.getText()));
+		}
 		
+		lbResult0.setText(arrayList.get(0));
+		lbResult1.setText(arrayList.get(1));
+		lbResult2.setText(arrayList.get(2));
+		lbResult3.setText(arrayList.get(3));
 	
+		
 	}
-	
 }
 
 
