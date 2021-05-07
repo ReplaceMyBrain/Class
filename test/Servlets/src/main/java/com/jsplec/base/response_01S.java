@@ -28,8 +28,9 @@ public class response_01S extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		request.setCharacterEncoding("utf-8");
-		String siteName = request.getParameter("sitename");
+		request.setCharacterEncoding("utf-8"); //post방식일때만 사용가능.
+		String siteName = request.getParameter("sitename");  
+		
 		
 		response.setContentType("text/html; charset=utf-8");
 		
