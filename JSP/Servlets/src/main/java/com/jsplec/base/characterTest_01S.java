@@ -45,11 +45,11 @@ public class characterTest_01S extends HttpServlet {
 		writer.print("<body>");
 		writer.print("<h1> 성격테스트 </h1><br><br>");
 		writer.print(name + "님의 성격 테스트 결과<br><br>");
-		writer.print(color+"을 좋아하는 당신은" + animal + "그리고");
+		writer.print(color+"을 좋아하는 당신은" + animal + "그리고 ");
 		
 		for(int i=0; i<food.length; i++){
 			if(i<food.length-1) {
-					writer.print(food[i] + "과");
+					writer.print(food[i] + "과 ");
 			}
 			if(i==food.length-1)	{
 				writer.print(food[i] +"을 좋아하는 성격입니다.");
