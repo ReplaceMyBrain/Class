@@ -6,8 +6,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-<h2>회원가입</h2><br>
 <script type="text/javascript">
 	function checkLogin() {	
 		
@@ -61,6 +59,9 @@
 	}
 
 </script>
+<body>
+<h2>회원가입</h2><br>
+
 
 
 <form name="loginForm" action="validation04_Process.jsp" method="post" >
