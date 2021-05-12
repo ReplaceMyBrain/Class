@@ -11,8 +11,6 @@
 	<h3> 고객명단 리스트 검색</h3>
 <% 
 	//------------
-	where "+ select + " like '%" + search + "%'";
-	
 	String url_mysql = "jdbc:mysql://localhost/wtest?serverTimezone=Asia/Seoul&characterEncoding=utf8&useSSL=false";
 	String id_mysql = "root";
 	String pw_mysql = "qwer1234";

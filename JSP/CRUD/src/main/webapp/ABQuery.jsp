@@ -48,8 +48,8 @@
 			searchText = "";
 		}//첫화면 값이 null이니까 내가 처음에 정해주고 검색 되게 한다!!
 
-	String A = "select seq,name,tel,address,email,relation from addressbook" 
-	String B = "where" + search + "like '%" + searchText%
+	String A = "select seq,name,tel,address,email,relation from addressbook ";
+	String B = "where " + search + " like '%" + searchText + "%'";
 	int cnt=0;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -65,7 +65,7 @@
 					<td><%=rs.getString(3)%></td>
 					<td><%=rs.getString(4)%></td>
 					<td><%=rs.getString(5)%></td>
-					<td><%=rs.getString(5)%></td>
+					<td><%=rs.getString(6)%></td>
 				</tr>
 <% 				
 				cnt++;
