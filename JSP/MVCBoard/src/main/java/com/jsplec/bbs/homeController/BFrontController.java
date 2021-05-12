@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jsplec.bbs.command.BCommand;
+import com.jsplec.bbs.command.BListCommand;
+
 /**
  * Servlet implementation class BFrontController
  */
@@ -54,11 +57,15 @@ public class BFrontController extends HttpServlet {
 		String com=uri.substring(conPath.length());
 		
 		String viewPage =null;
+		BCommand command =null;
 
 		
 		switch(com) {
-		case("/list.do"): 
+		case("/list.do"):
+			command = new BListCommand();
+			command.execute(request, request);
 			viewPage = "list.jsp";
+			break;
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
