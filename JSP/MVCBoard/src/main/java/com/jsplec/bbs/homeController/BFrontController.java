@@ -15,7 +15,7 @@ import com.jsplec.bbs.command.BListCommand;
 /**
  * Servlet implementation class BFrontController
  */
-@WebServlet("/*.do")
+@WebServlet("*.do")
 public class BFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
