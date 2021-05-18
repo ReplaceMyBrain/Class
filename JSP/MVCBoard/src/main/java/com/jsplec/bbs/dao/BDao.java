@@ -81,7 +81,7 @@ public class BDao {
 			preparedStatement.setString(1, bName);
 			preparedStatement.setString(2, bTitle);
 			preparedStatement.setString(3, bContent);
-			
+		
 			preparedStatement.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();

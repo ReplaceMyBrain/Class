@@ -20,7 +20,7 @@
 		// 휴대폰 번호 정규식
 		var rePhone = /^[0-9]{3,4}$/;
 		// 이메일 검사 정규식
-		var reEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		var reEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
 		
 
 		if(!reId.test(form.id.value)) {
@@ -54,7 +54,7 @@
 			return ;
 		}
 		
-		
+		alert("회원가입이 완료되었습니다!")
 		form.submit();
 	}
 
