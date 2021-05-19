@@ -22,8 +22,8 @@ public class SignupDao {
 		}
 	}
 	
-
-	public int emailCheck(String email) {
+	//이메일 중복확인 아직 구현 못했음 내일 다시 해볼 예정.
+	public int emailCheck(String Stremail) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultset = null;
@@ -34,10 +34,10 @@ public class SignupDao {
 			String query = "select * from user where email = ?";
 			preparedStatement = connection.prepareStatement(query);
 			
-			preparedStatement.setString(1, email);
+			preparedStatement.setString(1, Stremail);
 			preparedStatement.executeUpdate();
 			
-			if (resultset.next() || email.equals("")) {
+			if (resultset.next() || Stremail.equals("")) {
 				return 0; // 이미 존재하는 회원
 			} else {
 				return 1; // 가입 가능한 회원
@@ -57,8 +57,8 @@ public class SignupDao {
 		}
 		return -1; // DB오류
 	}
-	
-	public void register(String email, String pw, String name, int tel, String address, String github) {
+	//회원가입
+	public void register(String email, String pw, String name, String tel, String address, String github) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
@@ -71,7 +71,7 @@ public class SignupDao {
 			preparedStatement.setString(1, email);
 			preparedStatement.setString(2, pw);
 			preparedStatement.setString(3, name);
-			preparedStatement.setInt(4, tel);
+			preparedStatement.setString(4, tel);
 			preparedStatement.setString(5, address);
 			preparedStatement.setString(6, github);
 			preparedStatement.executeUpdate();

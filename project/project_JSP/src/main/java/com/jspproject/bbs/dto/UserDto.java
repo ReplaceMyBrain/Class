@@ -8,7 +8,7 @@ public class UserDto {
 	String email;
 	String pw;
 	String name;
-	int tel;
+	String tel;
 	String address;
 	String github;
 	Timestamp withdrawDate;
@@ -53,10 +53,10 @@ public class UserDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 	public String getAddress() {

@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.jspproject.bbs.command.Command;
+import com.jspproject.bbs.command.UserEmailSearchCommand;
 import com.jspproject.bbs.command.UserLoginCommand;
+import com.jspproject.bbs.command.UserPwSearchCommand;
 import com.jspproject.bbs.command.UserRegisterCommand;
 
 
@@ -75,12 +77,12 @@ public class MainController extends HttpServlet {
 		 * 단순 페이지 이동
 		 */
 		//로그인 창으로 이동
-		case("/Login.do"): // 실행시 ~~.do사용
-			viewPage = "Login.jsp"; // 실행할 jsp파일
+		case("/Home.do"): // 실행시 ~~.do사용
+			viewPage = "Home.jsp"; // 실행할 jsp파일
 		break;
 		
 		//회원가입 창으로 이동 
-		case("/signup.do"): // 실행시 ~~.do사용
+		case("/Signup.do"): // 실행시 ~~.do사용
 			viewPage = "Signup.jsp"; // 실행할 jsp파일
 			break;
 		
@@ -94,19 +96,31 @@ public class MainController extends HttpServlet {
 			viewPage = "PrivacyPolicy.jsp"; // 실행할 jsp파일
 		break;
 		
-		//이메일 찾기창
-		case("/emailCheckForm.do"): // 실행시 ~~.do사용
+		//이메일 찾기창으로
+		case("/EmailCheckForm.do"): // 실행시 ~~.do사용
 			viewPage = "EmailSearch.jsp"; // 실행할 jsp파일
 		break;
 		
-		//비밀번호 찾기창
-		case("/PwSearch.do"): // 실행시 ~~.do사용
+		//비밀번호 찾기창으로
+		case("/PwCheckForm.do"): // 실행시 ~~.do사용
 			viewPage = "PwSearch.jsp"; // 실행할 jsp파일
 		break;
 		
 		//메인으로
 		case("/Main.do"): // 실행시 ~~.do사용
-			viewPage = "HaederLogin.jsp"; // 실행할 jsp파일
+			viewPage = "Header.jsp"; // 실행할 jsp파일
+		break;
+		
+		//로그인실패
+		case("/LoginFail.do"): // 실행시 ~~.do사용
+			viewPage = "LoginFail.jsp"; // 실행할 jsp파일
+		break;
+		
+		//로그아웃
+		case("/Logout.do"): // 실행시 ~~.do사용
+			//세션끔
+			session.invalidate();
+			viewPage = "Home.jsp"; // 실행할 jsp파일
 		break;
 		
 		
@@ -119,15 +133,42 @@ public class MainController extends HttpServlet {
 		case("/register.do"):
 			command = new UserRegisterCommand(); // 커맨드(메소드)적기
 			command.execute(request, response, session);
-			viewPage = "Login.jsp";
+			viewPage = "Home.do";
 			break;
 		//로그인 클릭시	
 		case("/login.do"):
 			command = new UserLoginCommand(); // 커맨드(메소드)적기
 			command.execute(request, response, session);
+			
+			//세션에 이메일값 저장해서 공백이면 로그인 실패처리시킴 사용엔 문제없지만 사실 이부분 피드백이 필요함...
+			if(session.getAttribute("email").equals("")) {
+				session.invalidate();
+				viewPage = "LoginFail.do";
+			}else {
+				viewPage = "Main.do";
+			}
 			break;
-
-		}
+		
+		//이메일 중복체크
+		case("/EmailCheck.do"):
+		command = new UserEmailSearchCommand(); // 커맨드(메소드)적기
+		command.execute(request, response, session);
+		break;
+		
+		//이메일 찾기 버튼 클릭 후
+		case("/EmailSearch.do"):
+			command = new UserEmailSearchCommand(); // 커맨드(메소드)적기
+			command.execute(request, response, session);
+			break;
+		
+		//패스워드 찾기 버튼 클릭 후
+		case("/PwSearch.do"):
+			command = new UserPwSearchCommand(); // 커맨드(메소드)적기
+			command.execute(request, response, session);
+			break;
+		
+		}		
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

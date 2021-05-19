@@ -14,7 +14,7 @@ public class UserRegisterCommand implements Command {
 	String email = request.getParameter("email");
 	String pw = request.getParameter("pw");
 	String name = request.getParameter("name");
-	int tel = Integer.parseInt(request.getParameter("tel"));
+	String tel = request.getParameter("tel");
 	String address = request.getParameter("address");
 	String github = request.getParameter("github");
 	

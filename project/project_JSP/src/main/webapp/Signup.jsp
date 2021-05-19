@@ -192,43 +192,36 @@
 		}
 		alert(form.name.value + "회원가입이 완료되었습니다!")
 		form.submit();
-	}
-	
-	/* 
-	$(function(){
-		$("#emailCheck").blur(function(){
-			 AJAX 
+	}	
+	function emailCheck(){
+			/* AJAX */
 			$.ajax({
-				url:"UserEmailCheckCommand",
+				url:"/UserEmailCheckCommand.java",
 				type: "post",
-				data: {"email":$("#emailCheck").val()}
+				data: {email:$("#email").val()},
 				success:function(result){
-					if (result == 0) {
-						// 1 : 아이디가 중복되는 문구
-						$("#emailCheck").text("사용중인 이메일입니다.");
-						$("#emailCheck").css("color", "red");
-					} else if(result == 1)  {
-							$('#emailCheck').text("사용 가능한 이메일입니다:)");
-							$('#emailCheck').css('color', 'blue');
+					console.log("1=중복x 0=중복o : "+result);
+					if (result == 1)  {
+						$("#email_check").text("사용 가능한 이메일입니다:)");
+						$("#email_check").css('color', 'blue');
 					}
+					else{
+						$("#email_check").text("사용중인 이메일입니다.");
+						$("#email_check").css("color", "red");
+					} 
+				}
 			});
-				
-		});
-	});
-		
 	}
-	*/	
-
-</script>
-
-
+			
+	
+</script> 
 
 <body>
     <div id="register-box">
       <h1>회원가입</h1> 
       <form action="register.do" method="post" name="registerForm">
         <span>이메일</span><button class="duplicate" onclick="emailCheck()" type="button">중복확인</button>
-        <input type="text" name="email"  id=emailCheck placeholder="이메일을 입력해주세요." />
+        <input type="text" name="email"  id=email placeholder="이메일을 입력해주세요." />
         <div class=check_font" id=email_check></div>
         <span>비밀번호</span><br>
         <input type="password" name="pw" id=pwCheck placeholder="비밀번호를 입력해주세요" />
@@ -248,5 +241,6 @@
         <input type="button" onclick="checkRegister()" value="회원가입" />
      </form>
    </div>
+   
 </body>
 </html> 

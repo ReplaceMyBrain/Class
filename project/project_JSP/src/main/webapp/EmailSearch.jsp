@@ -81,12 +81,12 @@
 <body>
     <div id="pwsearch-box">
       <h1>이메일 찾기</h1> 
-      <form action="Login.do">
+      <form action="EmailSearch.do" method="post">
         <span>이름</span><br>
-        <input type="text" name="username" placeholder="이름을 입력해주세요." />
+        <input type="text" name="name" placeholder="이름을 입력해주세요." />
         <span>핸드폰번호</span><br>
-        <input type="text" name="phone" placeholder="-없이 핸드폰번호를 입력해주세요." />
-        <input type="submit" name="pwsearch" value="비밀번호 찾기" />
+        <input type="text" name="tel" placeholder="-없이 핸드폰번호를 입력해주세요." />
+        <input type="submit" name="emailsearch" value="비밀번호 찾기" />
      </form>
    </div>  
 </body>

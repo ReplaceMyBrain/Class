@@ -13,14 +13,18 @@ public class UserLoginCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response, HttpSession session){
 		// TODO Auto-generated method stub
 		
+		//email, pw 받음.
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
 		
+		//logindao에서 login 메소스 실행 > 그 값을 loginemail로 저장
 		LoginDao dao = new LoginDao();
 		String loginemail = dao.login(email,pw);
 		
-		request.setAttribute("email", loginemail);
+		//세션에 email로 저장
+		session.setAttribute("email", loginemail);
 		
+		//확인해봄.
 		System.out.println(loginemail);
 
 	}
