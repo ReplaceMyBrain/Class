@@ -50,6 +50,7 @@ public class EmailSearchDao {
 				}finally {
 					try {
 						//정리 다시 거꾸로 정리해주는것
+						if(resultset != null) resultset.close();
 						if(preparedStatement != null) preparedStatement.close();
 						if(connection != null) connection.close();
 					}catch(Exception e){

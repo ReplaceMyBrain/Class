@@ -20,17 +20,11 @@ public class UserEmailCheckCommand implements Command {
 		
 		SignupDao dao = new SignupDao();
 		
-		boolean emailCheck = dao.emailCheck(email);
+		String emailCheck = dao.emailCheck(email);
 		
 		request.setAttribute("email", emailCheck);
-		
-		PrintWriter out = ((ServletResponse) request).getWriter();
-		if(emailCheck=true) {
-			out.print(true);
-		}else if(emailCheck=false) {
-			out.print(false);
-		}
-			
+		System.out.println(emailCheck);
+
 
 	}
 

@@ -23,31 +23,31 @@ public class SignupDao {
 	}
 	
 	//이메일 중복확인 아직 구현 못했음 내일 다시 해볼 예정.
-	public boolean emailCheck(String Stremail) {
+	public String emailCheck(String Stremail) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultset = null;
+		String result ="";
 		
 		try {
 			connection = dataSource.getConnection();
 			
-			String query = "select * from user where email = ?";
+			String query = "select email from user where email = ?";
 			preparedStatement = connection.prepareStatement(query);
 			
 			preparedStatement.setString(1, Stremail);
 			preparedStatement.executeUpdate();
 			
 			if (resultset.next()) {
-				return false; // 이미 존재하는 회원
-			} else {
-				return true; // 가입 가능한 회원
+				String email = resultset.getString("email");
+		    	  result = email;
 			}
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			try {
 				//정리 다시 거꾸로 정리해주는것
+				if(resultset != null) resultset.close();
 				if(preparedStatement != null) preparedStatement.close();
 				if(connection != null) connection.close();
 			}catch(Exception e){
@@ -55,7 +55,7 @@ public class SignupDao {
 				
 			}
 		}
-		return false; // DB오류
+		return result;
 	}
 	//회원가입
 	public void register(String email, String pw, String name, String tel, String address, String github) {
