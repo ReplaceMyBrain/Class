@@ -6,7 +6,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
@@ -16,7 +16,7 @@
                 var roadAddr = data.roadAddress; // 도로명 주소 변수
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById("address").value = roadAddr;
+                document.getElementById("address1").value = roadAddr;
 
             }
         }).open();
@@ -77,6 +77,7 @@
     font-size: 3pt;
     margin-top: -13px;
     margin-bottom: 5px;
+    
 	}
 	
     
@@ -166,12 +167,12 @@ $(function(){
   });  
   $("form").validate({
       //validation이 끝난 이후의 submit 직전 추가 작업할 부분
-      submitHandler: function() {
+  		  submitHandler: function() {
           var f = confirm("회원가입을 완료하겠습니까?");
           var form = documenmht.frm;
           if(f){
-             alert(form.name.value + "회원가입이 완료되었습니다!")
-              return true;
+             return true;
+             alert(form.name.value + "회원가입이 완료되었습니다!");
              
           } else {
               return false;
@@ -181,8 +182,8 @@ $(function(){
       rules: {
     	  email: {
               required : true,
-              regx : /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
-          	  remote: "/UserEmailCheckCommand"
+              regx : /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
+          	  //remote: "/UserEmailCheckCommand"
           },
           pw: {
               required : true,
@@ -200,10 +201,10 @@ $(function(){
         	  required : true,
             regx : /^[0-9]{11,12}$/
           },
-          address: {
+          address1: {
         	  required : true
           },
-          address1: {
+          address2: {
         	  required : true
           },
           github: {
@@ -218,8 +219,8 @@ $(function(){
       messages : {
           email: {
                 required : "필수입력사항입니다.",
-                regx : "이메일형식을 맞춰주세요",
-                remote : "존재하는 아이디입니다"
+                regx : "이메일형식을 맞춰주세요"
+               // remote : "존재하는 아이디입니다"
             },
             pw: {
                 required : "필수입력사항입니다.",
@@ -237,10 +238,10 @@ $(function(){
               required : "필수입력사항입니다.",
                 regx : "-없이 숫자11~12자리입니다"
             },
-            address: {
+            address1: {
               required : "필수입력사항입니다.",
             },
-            address1: {
+            address2: {
               required : "필수입력사항입니다.",
             },
             github: {
@@ -259,20 +260,20 @@ $(function(){
       <h1>회원가입</h1> 
       <form action="register.do" method="post" name="frm" id="frm">
         이메일<br>
-        <input type="text" name="email"  id=email placeholder="이메일을 입력해주세요." />
+        <input type="text" name="email"  id="email" placeholder="이메일을 입력해주세요." />
         비밀번호<br>
-        <input type="password" name="pw" id=pw placeholder="비밀번호를 입력해주세요" />
+        <input type="password" name="pw" id="pw" placeholder="문자,숫자,특수문자가 포함된 비밀번호를 입력해주세요." />
         비밀번호 확인<br>
-        <input type="password" name="pw2" id=pw2 placeholder="입력한 비밀번호를 입력해주세요" />
+        <input type="password" name="pw2" id="pw2" placeholder="입력한 비밀번호를 입력해주세요" />
         이름<br>
-        <input type="text" name="name" id=name placeholder="이름을 입력해주세요." />
+        <input type="text" name="name" id="name" placeholder="이름을 입력해주세요." />
         핸드폰번호<br>
-        <input type="text" name="tel" id=tel placeholder="-없이 핸드폰번호를 입력해주세요." />
+        <input type="text" name="tel" id="tel" placeholder="-없이 핸드폰번호를 입력해주세요." />
         도로명 주소<input type="button" onclick="sample4_execDaumPostcode()" value="주소 찾기">
-        <input type="text" name="address" id=address placeholder="주소찾기를 눌러주세요." readonly />
-        <input type="text" name="address1" id=address1 placeholder="상세주소를 입력해주세요." />
+        <input type="text" name="address1" id="address1" placeholder="주소찾기를 눌러주세요." readonly />
+        <input type="text" name="address2" id="address2" placeholder="상세주소를 입력해주세요." />
         GitHub아이디(선택)<br>
-        <input type="text" name="github" id=github placeholder="GitHub아이디를 입력해주세요." />
+        <input type="text" name="github" id="github" placeholder="GitHub아이디를 입력해주세요." />
      	 <div class="check">
         <a href="PrivacyPolicy.do"  target='_blank'>개인정보처리방침</a>에 동의합니다.<input type="checkbox" name="agreechk" id="agreechk">
     	 </div>
