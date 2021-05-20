@@ -1,12 +1,14 @@
 package com.jspproject.bbs.command;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.jspproject.bbs.dao.LoginDao;
+
 import com.jspproject.bbs.dao.SignupDao;
 
 public class UserEmailCheckCommand implements Command {
@@ -18,9 +20,19 @@ public class UserEmailCheckCommand implements Command {
 		
 		SignupDao dao = new SignupDao();
 		
-		response.getWriter().write(dao.emailCheck(email)+"");
-		System.out.println(dao.emailCheck(email)+"");
+		boolean emailCheck = dao.emailCheck(email);
 		
+		request.setAttribute("email", emailCheck);
+		
+		PrintWriter out = ((ServletResponse) request).getWriter();
+		if(emailCheck=true) {
+			out.print(true);
+		}else if(emailCheck=false) {
+			out.print(false);
+		}
+			
+
 	}
+
 
 }

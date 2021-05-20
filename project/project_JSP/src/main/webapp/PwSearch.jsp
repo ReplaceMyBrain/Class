@@ -24,7 +24,7 @@
       position: relative;
       margin: 5% auto;
       width: 400px;
-      height: 300px;
+      height: 330px;
       background: #FFF;
       padding:20px 40px;
       box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
@@ -74,26 +74,32 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
       transition: 0.1s ease;
     }
+  
+    .home {
+      margin-top: 10px;
+      text-align: center;
+      width: 100%;
+      height: 32px;
+      background: hsl(214, 100%, 47%);
+      border: none;
+      border-radius: 2px;
+      color: #FFF;
+    }
+
+    .home:hover,
+    .home:focus {
+      opacity: 0.8;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      transition: 0.1s ease;
+    }
+    .home:active {
+      opacity: 1;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      transition: 0.1s ease;
+    }
  
 </style>  
-<script>   
-	$("#pw_search").click(function(){
-		 /*AJAX*/ 
-		$.ajax({
-			url:"./PwSearch.do",
-			type: "post",
-			data: {"email":$("#email").val(),"tel":$("#tel").val()}
-			success:function(result){
-				if (result == 0) {
-					// 1 : 아이디가 중복되는 문구
-					$("#pw_search").text("");
-					$("#pw_search").css("color", "red");
-				} else if(result == 1)  {
-					$('#pw_search').text("");
-					$('#pw_search').css('color', 'blue');
-				}
 
-</script> 
     <title>비밀번호찾기</title>
 </head>
 <body>
@@ -104,9 +110,9 @@
         <input type="text" name="email" id="email" placeholder="이메일을 입력해주세요." />
         <span>핸드폰번호</span><br>
         <input type="text"  name="tel" id="tel" placeholder="-없이 핸드폰번호를 입력해주세요." />
-        <input type="button" id="pwsearch" onclick="" value="비밀번호 찾기" />
-        <div class="check_font" id="pw_search"></div>
+        <input type="submit" id="pwsearch" value="비밀번호 찾기" />
      </form>
+      <a href="Home.do"><button class="home">로그인</button></a> 
    </div>  
 </body>
 </html> 

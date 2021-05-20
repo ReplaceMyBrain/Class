@@ -18,6 +18,7 @@ public class UserPwSearchCommand implements Command {
 		String searchPw = dao.pwSearch(email,tel);
 		
 		session.setAttribute("searchPw", searchPw);
+		System.out.println(searchPw);
 		
 	}
 

@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   
+<script>
+	$(document).ready(function() {
+	    alert('이메일 찾기 실패: 정보확인불가 이메일을 찾을 수 없습니다.');
+	});	
+</script>   
  <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
     *{margin:0; padding: 0; box-sizing: border-box;}

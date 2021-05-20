@@ -21,6 +21,7 @@ public class UserEmailSearchCommand implements Command {
 		String searchEmail = dao.emailSearch(name,tel);
 		
 		session.setAttribute("searchEmail", searchEmail);
+		System.out.println(searchEmail);
 	}
 
 }

@@ -133,7 +133,7 @@ public class MainController extends HttpServlet {
 		case("/register.do"):
 			command = new UserRegisterCommand(); // 커맨드(메소드)적기
 			command.execute(request, response, session);
-			viewPage = "Home.do";
+			viewPage = "Home.jsp";
 			break;
 		//로그인 클릭시	
 		case("/login.do"):
@@ -143,9 +143,9 @@ public class MainController extends HttpServlet {
 			//세션에 이메일값 저장해서 공백이면 로그인 실패처리시킴 사용엔 문제없지만 사실 이부분 피드백이 필요함...
 			if(session.getAttribute("email").equals("")) {
 				session.invalidate();
-				viewPage = "LoginFail.do";
+				viewPage = "LoginFail.do"; //실패시
 			}else {
-				viewPage = "Main.do";
+				viewPage = "Main.jsp"; //성공시
 			}
 			break;
 		
@@ -153,18 +153,34 @@ public class MainController extends HttpServlet {
 		case("/EmailCheck.do"):
 		command = new UserEmailSearchCommand(); // 커맨드(메소드)적기
 		command.execute(request, response, session);
+		viewPage = "Signup.do";
 		break;
 		
 		//이메일 찾기 버튼 클릭 후
 		case("/EmailSearch.do"):
 			command = new UserEmailSearchCommand(); // 커맨드(메소드)적기
 			command.execute(request, response, session);
+			
+			if(session.getAttribute("searchEmail").equals("")) {
+				session.invalidate();
+				viewPage = "EmailSearchFail.jsp"; //실패시
+			}else {
+				viewPage = "EmailSearchSuccess.jsp"; //성공시
+			}
 			break;
 		
 		//패스워드 찾기 버튼 클릭 후
 		case("/PwSearch.do"):
 			command = new UserPwSearchCommand(); // 커맨드(메소드)적기
 			command.execute(request, response, session);
+			
+			if(session.getAttribute("searchPw").equals("")) {
+				session.invalidate();
+				viewPage = "PwSearchFail.jsp"; //실패시
+			}else {
+				viewPage = "PwSearchSuccess.jsp"; //성공시
+			}
+			
 			break;
 		
 		}		

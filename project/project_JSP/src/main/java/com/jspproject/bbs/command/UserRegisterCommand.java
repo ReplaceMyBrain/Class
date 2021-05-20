@@ -16,9 +16,12 @@ public class UserRegisterCommand implements Command {
 	String name = request.getParameter("name");
 	String tel = request.getParameter("tel");
 	String address = request.getParameter("address");
+	String address1 = request.getParameter("address1");
 	String github = request.getParameter("github");
 	
+	address =address+address1;
 	SignupDao dao = new SignupDao();
+	
 	dao.register(email, pw, name, tel, address, github);
 	
 	}
