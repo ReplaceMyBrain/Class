@@ -118,6 +118,10 @@ public class MainController extends HttpServlet {
 			viewPage = "Home.jsp"; // 실행할 jsp파일
 		break;
 		
+		case("/naver.do"): // 실행시 ~~.do사용
+			viewPage = "naverCallback.jsp"; // 실행할 jsp파일
+		break;
+		
 		
 			
 		/*
