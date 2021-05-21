@@ -58,22 +58,22 @@ public class SignupDao {
 		return result;
 	}
 	//회원가입
-	public void register(String email, String pw, String name, String tel, String address, String github) {
+	public void register(String email, String name, String pwd, String address ,String tel , String git) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
 		try {
 			connection = dataSource.getConnection();
 			
-			String query = "insert into user values (?,?,?,?,?,?,'0000-00-00 00:00:00',now(),0)";
+			String query = "insert into user values (?,?,?,?,?,?,now(),'0000-00-00 00:00:00',0)";
 			preparedStatement = connection.prepareStatement(query);
 			
 			preparedStatement.setString(1, email);
-			preparedStatement.setString(2, pw);
-			preparedStatement.setString(3, name);
-			preparedStatement.setString(4, tel);
-			preparedStatement.setString(5, address);
-			preparedStatement.setString(6, github);
+			preparedStatement.setString(2, name);
+			preparedStatement.setString(3, pwd);
+			preparedStatement.setString(4, address);
+			preparedStatement.setString(5, tel);
+			preparedStatement.setString(6, git);
 			preparedStatement.executeUpdate();
 			
 		}catch(Exception e) {

@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   
+<script>
+	$(document).ready(function() {
+	    alert('비밀번호 찾기 실패: 정보확인불가 비밀번호를 찾을 수 없습니다.');  
+	});
+</script>    
  <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
     *{margin:0; padding: 0; box-sizing: border-box;}
@@ -105,14 +109,14 @@
 <body>
     <div id="pwsearch-box">
       <h1>비밀번호 찾기</h1> 
-      <form action="PwSearch.do">
+      <form action="PwdSearch.do">
         <span>이메일</span><br>
         <input type="text" name="email" id="email" placeholder="이메일을 입력해주세요." />
         <span>핸드폰번호</span><br>
         <input type="text"  name="tel" id="tel" placeholder="-없이 핸드폰번호를 입력해주세요." />
         <input type="submit" id="pwsearch" value="비밀번호 찾기" />
      </form>
-      <a href="Home.do"><button class="home">로그인</button></a> 
+     <a href="Home.do"><button class="home">로그인</button></a> 
    </div>  
 </body>
 </html> 

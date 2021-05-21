@@ -4,9 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.jspproject.bbs.dao.PwSearchDao;
+import com.jspproject.bbs.dao.PwdSearchDao;
 
-public class UserPwSearchCommand implements Command {
+public class UserPwdSearchCommand implements Command {
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
@@ -14,11 +14,11 @@ public class UserPwSearchCommand implements Command {
 		String email = request.getParameter("email");
 		String tel = request.getParameter("tel");
 		
-		PwSearchDao dao =new PwSearchDao();
-		String searchPw = dao.pwSearch(email,tel);
+		PwdSearchDao dao =new PwdSearchDao();
+		String searchPwd = dao.pwdSearch(email,tel);
 		
-		session.setAttribute("searchPw", searchPw);
-		System.out.println(searchPw);
+		session.setAttribute("searchPwd", searchPwd);
+		System.out.println(searchPwd);
 		
 	}
 

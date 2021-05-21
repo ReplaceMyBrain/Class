@@ -24,7 +24,7 @@ public class LoginDao {
 	}
 	
 	
-	public String login(String strEmail, String strPw) {
+	public String login(String strEmail, String strPwd) {
 		UserDto dto = null;
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -34,11 +34,11 @@ public class LoginDao {
 			try {
 				connection = dataSource.getConnection();
 				
-				String query = "SELECT email FROM user WHERE email=? and pw=?";
+				String query = "SELECT email FROM user WHERE email=? and pwd=?";
 				preparedStatement = connection.prepareStatement(query);
 				
 				preparedStatement.setString(1, strEmail);
-				preparedStatement.setString(2, strPw);
+				preparedStatement.setString(2, strPwd);
 					
 				resultset = preparedStatement.executeQuery();
 				

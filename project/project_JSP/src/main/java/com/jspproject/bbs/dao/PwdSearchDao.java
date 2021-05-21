@@ -8,12 +8,12 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-public class PwSearchDao {
+public class PwdSearchDao {
 
 
 	DataSource dataSource;
 		
-	public PwSearchDao() {
+	public PwdSearchDao() {
 
 		try {
 			Context context = new InitialContext();
@@ -23,7 +23,7 @@ public class PwSearchDao {
 		}
 	}
 
-	public String pwSearch(String strEmail, String strTel) {
+	public String pwdSearch(String strEmail, String strTel) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultset = null;
@@ -32,7 +32,7 @@ public class PwSearchDao {
 			try {
 				connection = dataSource.getConnection();
 					
-				String query = "SELECT pw FROM user WHERE email=? and tel=?";
+				String query = "SELECT pwd FROM user WHERE email=? and tel=?";
 				preparedStatement = connection.prepareStatement(query);
 					
 				preparedStatement.setString(1, strEmail);
@@ -41,8 +41,8 @@ public class PwSearchDao {
 				resultset = preparedStatement.executeQuery();
 					
 		      if(resultset.next()) {
-		    	  String pw = resultset.getString("pw");
-		    	  result = pw;
+		    	  String pwd = resultset.getString("pwd");
+		    	  result = pwd;
 		      } 
 		    } catch (Exception e) {
 			      e.printStackTrace();

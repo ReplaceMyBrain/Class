@@ -16,6 +16,7 @@ public class UserEmailCheckCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("email");
 		
 		SignupDao dao = new SignupDao();

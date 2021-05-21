@@ -15,11 +15,11 @@ public class UserLoginCommand implements Command {
 		
 		//email, pw 받음.
 		String email = request.getParameter("email");
-		String pw = request.getParameter("pw");
+		String pwd = request.getParameter("pwd");
 		
 		//logindao에서 login 메소스 실행 > 그 값을 loginemail로 저장
 		LoginDao dao = new LoginDao();
-		String loginemail = dao.login(email,pw);
+		String loginemail = dao.login(email,pwd);
 		
 		//세션에 email로 저장
 		session.setAttribute("email", loginemail);

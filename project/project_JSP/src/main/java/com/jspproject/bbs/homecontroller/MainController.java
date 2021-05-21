@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.jspproject.bbs.command.Command;
 import com.jspproject.bbs.command.UserEmailSearchCommand;
 import com.jspproject.bbs.command.UserLoginCommand;
-import com.jspproject.bbs.command.UserPwSearchCommand;
+import com.jspproject.bbs.command.UserPwdSearchCommand;
 import com.jspproject.bbs.command.UserRegisterCommand;
 
 
@@ -102,8 +102,8 @@ public class MainController extends HttpServlet {
 		break;
 		
 		//비밀번호 찾기창으로
-		case("/PwCheckForm.do"): // 실행시 ~~.do사용
-			viewPage = "PwSearch.jsp"; // 실행할 jsp파일
+		case("/PwdCheckForm.do"): // 실행시 ~~.do사용
+			viewPage = "PwdSearch.jsp"; // 실행할 jsp파일
 		break;
 		
 		//메인으로
@@ -165,15 +165,15 @@ public class MainController extends HttpServlet {
 			break;
 		
 		//패스워드 찾기 버튼 클릭 후
-		case("/PwSearch.do"):
-			command = new UserPwSearchCommand(); // 커맨드(메소드)적기
+		case("/PwdSearch.do"):
+			command = new UserPwdSearchCommand(); // 커맨드(메소드)적기
 			command.execute(request, response, session);
 			
-			if(session.getAttribute("searchPw").equals("")) {
+			if(session.getAttribute("searchPwd").equals("")) {
 				session.invalidate();
-				viewPage = "PwSearchFail.jsp"; //실패시
+				viewPage = "PwdSearchFail.jsp"; //실패시
 			}else {
-				viewPage = "PwSearchSuccess.jsp"; //성공시
+				viewPage = "PwdSearchSuccess.jsp"; //성공시
 			}
 			
 			break;

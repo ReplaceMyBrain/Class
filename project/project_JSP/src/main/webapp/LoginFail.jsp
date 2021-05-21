@@ -164,9 +164,9 @@
             <label for="email"> 이메일</label>    
         </div>
         <div class = "int-area">
-          <input type="password" name="pw" id="pw"
+          <input type="password" name="pwd" id="pwd"
           autocomplete="off" required>
-          <label for="pw"> 비밀번호</label>    
+          <label for="pwd"> 비밀번호</label>    
         </div>
         <div class="btn-login">
           <button id="btn" type="submit"> 로그인 </button>
@@ -181,13 +181,13 @@
       </div>
       <div class = "caption">
         <a href="EmailCheckForm.do">이메일찾기</a>&nbsp&nbsp&nbsp&nbsp&nbsp
-        <a href="PwCheckForm.do">비밀번호찾기</a>
+        <a href="PwdCheckForm.do">비밀번호찾기</a>
       </div>
     </section>
   <script>
  
       let email =$('#email');
-      let pw =$('#pw');
+      let pwd =$('#pwd');
       let btn =$('#btn');
 
       $(btn).on('click', function(){
@@ -197,8 +197,8 @@
               $('label').removeClass('warning');
             },1500);
         }
-        else if($(pw).val() == "") {
-          $(pw).next('label').addClass('warning')
+        else if($(pwd).val() == "") {
+          $(pwd).next('label').addClass('warning')
           setTimeout(function(){
               $('label').removeClass('warning');
             },1500);

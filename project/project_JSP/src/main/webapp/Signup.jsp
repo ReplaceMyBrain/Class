@@ -171,9 +171,7 @@ $(function(){
           var f = confirm("회원가입을 완료하겠습니까?");
           var form = documenmht.frm;
           if(f){
-             return true;
-             alert(form.name.value + "회원가입이 완료되었습니다!");
-             
+              return true; 
           } else {
               return false;
           }
@@ -183,22 +181,24 @@ $(function(){
     	  email: {
               required : true,
               regx : /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
-/*         	  remote: {
-                  url: "UserEmailCheckCommand.jsp",
-                  type: "post",
+ /*        	  remote: {
+                  url: "UserEmailCheckCommand.jsp?email=dowoo123@naver.com",
+                  type: "get",
                   data: {
                 	  email: function() {
                       return $( "#email" ).val();
-                    }
+                      }
+              	   }
+         	   }
 */
           },
-          pw: {
+          pwd: {
               required : true,
               regx : /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{6,20}$/
           },
-          pw2: {
+          pwd2: {
               required : true,
-              equalTo : pw
+              equalTo : pwd
           },
           name: {
               required : true,
@@ -214,7 +214,7 @@ $(function(){
           address2: {
         	  required : true
           },
-          github: {
+          git: {
         	  maxlength : 20
           },
           agreechk: {
@@ -227,13 +227,13 @@ $(function(){
           email: {
                 required : "필수입력사항입니다.",
                 regx : "이메일형식을 맞춰주세요"
-//                remote : "존재하는 아이디입니다"
+               // remote : "존재하는 아이디입니다"
             },
-            pw: {
+            pwd: {
                 required : "필수입력사항입니다.",
                 regx : "비밀번호는 문자,숫자,특수문자 포함 6~20자입니다"
             },
-            pw2: {
+            pwd2: {
                 required : "필수입력사항입니다.",
                 equalTo : "비밀번호가 맞지 않습니다."
             },
@@ -251,7 +251,7 @@ $(function(){
             address2: {
               required : "필수입력사항입니다.",
             },
-            github: {
+            git: {
               maxlength : "최대 {0}글자 이하입니다."
             },
             agreechk: {
@@ -269,9 +269,9 @@ $(function(){
         이메일<br>
         <input type="text" name="email"  id="email" placeholder="이메일을 입력해주세요." />
         비밀번호<br>
-        <input type="password" name="pw" id="pw" placeholder="문자,숫자,특수문자가 포함된 비밀번호를 입력해주세요." />
+        <input type="password" name="pwd" id="pwd" placeholder="문자,숫자,특수문자가 포함된 비밀번호를 입력해주세요." />
         비밀번호 확인<br>
-        <input type="password" name="pw2" id="pw2" placeholder="입력한 비밀번호를 입력해주세요" />
+        <input type="password" name="pwd2" id="pwd2" placeholder="입력한 비밀번호를 입력해주세요" />
         이름<br>
         <input type="text" name="name" id="name" placeholder="이름을 입력해주세요." />
         핸드폰번호<br>
@@ -280,7 +280,7 @@ $(function(){
         <input type="text" name="address1" id="address1" placeholder="주소찾기를 눌러주세요." readonly />
         <input type="text" name="address2" id="address2" placeholder="상세주소를 입력해주세요." />
         GitHub아이디(선택)<br>
-        <input type="text" name="github" id="github" placeholder="GitHub아이디를 입력해주세요." />
+        <input type="text" name="git" id="git" placeholder="GitHub아이디를 입력해주세요." />
      	 <div class="check">
         <a href="PrivacyPolicy.do"  target='_blank'>개인정보처리방침</a>에 동의합니다.<input type="checkbox" name="agreechk" id="agreechk">
     	 </div>
