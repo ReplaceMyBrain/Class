@@ -36,10 +36,11 @@ public class SignupDao {
 			preparedStatement = connection.prepareStatement(query);
 			
 			preparedStatement.setString(1, Stremail);
-			preparedStatement.executeUpdate();
+			
+			resultset = preparedStatement.executeQuery();
 			
 			if (resultset.next()) {
-				String email = resultset.getString("email");
+				  String email = resultset.getString("email");
 		    	  result = email;
 			}
 		}catch(Exception e) {

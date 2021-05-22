@@ -180,17 +180,16 @@ $(function(){
       rules: {
     	  email: {
               required : true,
-              regx : /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
- /*        	  remote: {
-                  url: "UserEmailCheckCommand.jsp?email=dowoo123@naver.com",
-                  type: "get",
+              regx : /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
+        	  remote: {
+                  url: "./UserRegisterCheckServlet",
+                  type: "POST",
                   data: {
                 	  email: function() {
                       return $( "#email" ).val();
                       }
               	   }
          	   }
-*/
           },
           pwd: {
               required : true,
@@ -226,8 +225,8 @@ $(function(){
       messages : {
           email: {
                 required : "필수입력사항입니다.",
-                regx : "이메일형식을 맞춰주세요"
-               // remote : "존재하는 아이디입니다"
+                regx : "이메일형식을 맞춰주세요",
+                remote : "존재하는 아이디입니다"
             },
             pwd: {
                 required : "필수입력사항입니다.",
