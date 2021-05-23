@@ -22,7 +22,7 @@ public class SignupDao {
 		}
 	}
 	
-	//이메일 중복확인 아직 구현 못했음 내일 다시 해볼 예정.
+	//이메일 중복확인
 	public String emailCheck(String Stremail) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;

@@ -13,7 +13,7 @@ public class UserDto {
 	String github;
 	Timestamp withdrawDate;
 	Timestamp signupDate;
-	int adminNum;
+	int admin;
 	int result;
 
 	
@@ -83,11 +83,11 @@ public class UserDto {
 	public void setSignupDate(Timestamp signupDate) {
 		this.signupDate = signupDate;
 	}
-	public int getAdminNum() {
-		return adminNum;
+	public int getAdmin() {
+		return admin;
 	}
-	public void setAdminNum(int adminNum) {
-		this.adminNum = adminNum;
+	public void setAdmin(int admin) {
+		this.admin = admin;
 	}
 
 	
