@@ -28,7 +28,7 @@ public class UserLoginCommand implements Command {
 		session.setAttribute("email", loginEmail);
 		session.setAttribute("admin", loginAdmin);
 		
-		//확인
+		//확인ㅁ
 		System.out.println(loginEmail);
 		System.out.println(loginAdmin);
 
