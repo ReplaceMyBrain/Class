@@ -182,7 +182,7 @@ $(function(){
               required : true,
               regx : /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
         	  remote: {
-                  url: "./UserRegisterCheckServlet",
+                  url: "./EmailCheckServlet",
                   type: "POST",
                   data: {
                 	  email: function() {
@@ -205,7 +205,16 @@ $(function(){
           },
           tel: {
         	  required : true,
-            regx : /^[0-9]{11,12}$/
+          	  regx : /^[0-9]{11,12}$/,
+        	  remote: {
+                  url: "./TelCheckServlet",
+                  type: "POST",
+                  data: {
+                	  email: function() {
+                      return $( "#tel" ).val();
+                      }
+              	   }
+         	   }
           },
           address1: {
         	  required : true
@@ -242,7 +251,8 @@ $(function(){
             },
             tel: {
               required : "필수입력사항입니다.",
-                regx : "-없이 숫자11~12자리입니다"
+              regx : "-없이 숫자11~12자리입니다",
+              remote : "존재하는 번호입니다"
             },
             address1: {
               required : "필수입력사항입니다.",

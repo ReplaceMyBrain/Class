@@ -12,8 +12,8 @@ import com.jspproject.bbs.dao.SignupDao;
 /**
  * Servlet implementation class UserRegisterCheckServlet
  */
-@WebServlet("/UserRegisterCheckServlet")
-public class UserRegisterCheckServlet extends HttpServlet {
+@WebServlet("/EmailCheckServlet")
+public class EmailCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**

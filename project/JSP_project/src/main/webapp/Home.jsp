@@ -154,7 +154,7 @@
     </header>
     <section class="login-form">
       <h1>Login</h1>
-      <form action="login.do" method="post">
+      <form action="loginClick.do" method="post">
         <div class = "int-area">
             <input type="text" name="email" id="email"
             autocomplete="off" required>

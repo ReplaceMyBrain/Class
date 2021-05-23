@@ -7,13 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
- <script>
+<script>
 	$(window).on('load', function() {
-	    alert('찾으신 password는 : ${searchPwd} 입니다');
+		alert('찾으신 email은 ${searchEmail}로 확인되나 현재 탈퇴계정입니다');
 	});
 	<%session.invalidate();%>
-</script>
-    
+</script>   
  <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
     *{margin:0; padding: 0; box-sizing: border-box;}
@@ -80,7 +79,6 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
       transition: 0.1s ease;
     }
- 
     .home {
       margin-top: 10px;
       text-align: center;
@@ -103,22 +101,22 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
       transition: 0.1s ease;
     }
- 
+     
 </style>  
 
-    <title>비밀번호찾기</title>
+    <title>이메일찾기</title>
 </head>
 <body>
     <div id="pwsearch-box">
-      <h1>비밀번호 찾기</h1> 
-      <form action="PwdSearch.do">
-        <span>이메일</span><br>
-        <input type="text" name="email" id="email" placeholder="이메일을 입력해주세요." />
+      <h1>이메일 찾기</h1> 
+      <form action="EmailSearch.do" method="post">
+        <span>이름</span><br>
+        <input type="text" name="name" placeholder="이름을 입력해주세요." />
         <span>핸드폰번호</span><br>
-        <input type="text"  name="tel" id="tel" placeholder="-없이 핸드폰번호를 입력해주세요." />
-        <input type="submit" id="pwsearch" value="비밀번호 찾기" />
+        <input type="text" name="tel" placeholder="-없이 핸드폰번호를 입력해주세요." />
+        <input type="submit" name="emailsearch" value="이메일 찾기" />
      </form>
-     <a href="Login.do"><button class="home">로그인</button></a>
+      <a href="Login.do"><button class="home">로그인</button></a> 
    </div>  
 </body>
-</html> 
+</html>

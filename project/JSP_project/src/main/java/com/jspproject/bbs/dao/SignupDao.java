@@ -23,7 +23,7 @@ public class SignupDao {
 	}
 	
 	//이메일 중복확인
-	public String emailCheck(String Stremail) {
+	public String emailCheck(String StrEmail) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultset = null;
@@ -35,7 +35,7 @@ public class SignupDao {
 			String query = "select email from user where email = ?";
 			preparedStatement = connection.prepareStatement(query);
 			
-			preparedStatement.setString(1, Stremail);
+			preparedStatement.setString(1, StrEmail);
 			
 			resultset = preparedStatement.executeQuery();
 			
@@ -58,6 +58,45 @@ public class SignupDao {
 		}
 		return result;
 	}
+	
+	//전화번호 중복확인
+	public String telCheck(String StrTel) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultset = null;
+		String result ="";
+		
+		try {
+			connection = dataSource.getConnection();
+			
+			String query = "select tel from user where tel = ?";
+			preparedStatement = connection.prepareStatement(query);
+			
+			preparedStatement.setString(1, StrTel);
+			
+			resultset = preparedStatement.executeQuery();
+			
+			if (resultset.next()) {
+				  String tel = resultset.getString("tel");
+		    	  result = tel;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				//정리 다시 거꾸로 정리해주는것
+				if(resultset != null) resultset.close();
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+				
+			}
+		}
+		return result;
+	}
+	
+	
 	//회원가입
 	public void register(String email, String name, String pwd, String address ,String tel , String git) {
 		Connection connection = null;

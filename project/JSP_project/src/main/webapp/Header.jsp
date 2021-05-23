@@ -90,7 +90,7 @@
             Object email = session.getAttribute("email");
             if(email == null) {%>
                 <li><a href="Signup.do" class="Guest">회원가입</a></li>
-                <li><a href="Home.do" class="Guest">로그인</a></li>
+                <li><a href="Login.do" class="Guest">로그인</a></li>
 			<% }else {%>
                 <li><a href="" class="login">마이페이지</a></li>
                 <li><a href="Logout.do" class="login">로그아웃</a></li>

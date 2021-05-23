@@ -18,10 +18,13 @@ public class UserEmailSearchCommand implements Command {
 		String tel = request.getParameter("tel");
 		
 		EmailSearchDao dao =new EmailSearchDao();
+		
 		String searchEmail = dao.emailSearch(name,tel);
+		String searchDeletedate = dao.deleteSearch(name,tel);
 		
 		session.setAttribute("searchEmail", searchEmail);
-		System.out.println(searchEmail);
+		session.setAttribute("searchDeletedate", searchDeletedate);
+
 	}
 
 }

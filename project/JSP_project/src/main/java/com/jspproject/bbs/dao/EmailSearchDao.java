@@ -23,7 +23,7 @@ public class EmailSearchDao {
 		}
 	}
 		
-		
+	//이메일 찾기	
 	public String emailSearch(String strName, String strTel) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -59,7 +59,43 @@ public class EmailSearchDao {
 				}
 				return result;
 			}
-			
+
+	//이메일찾기 탈퇴회원
+	public String deleteSearch(String strName, String strTel) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultset = null;
+		String result ="";
+				
+			try {
+				connection = dataSource.getConnection();
+					
+				String query = "SELECT deletedate FROM user WHERE name=? and tel=?";
+				preparedStatement = connection.prepareStatement(query);
+					
+				preparedStatement.setString(1, strName);
+				preparedStatement.setString(2, strTel);
+						
+				resultset = preparedStatement.executeQuery();
+					
+		      if(resultset.next()) {
+		    	  String searchDeletedate = resultset.getString("deletedate");
+		    	  result = searchDeletedate;
+		      } 
+		    } catch (Exception e) {
+			      e.printStackTrace();
+				}finally {
+					try {
+						//정리 다시 거꾸로 정리해주는것
+						if(resultset != null) resultset.close();
+						if(preparedStatement != null) preparedStatement.close();
+						if(connection != null) connection.close();
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+				}
+				return result;
+			}			
 		
 		
 	}//--------------

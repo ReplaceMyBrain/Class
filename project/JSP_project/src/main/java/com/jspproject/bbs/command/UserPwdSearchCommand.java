@@ -16,9 +16,13 @@ public class UserPwdSearchCommand implements Command {
 		
 		PwdSearchDao dao =new PwdSearchDao();
 		String searchPwd = dao.pwdSearch(email,tel);
+		String searchDeletedate = dao.deleteSearch(email,tel);
 		
 		session.setAttribute("searchPwd", searchPwd);
+		session.setAttribute("searchDeletedate", searchDeletedate);
+		
 		System.out.println(searchPwd);
+		System.out.println(searchDeletedate);
 		
 	}
 

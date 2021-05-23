@@ -112,7 +112,7 @@
         <input type="text"  name="tel" id="tel" placeholder="-없이 핸드폰번호를 입력해주세요." />
         <input type="submit" id="pwsearch" value="비밀번호 찾기" />
      </form>
-      <a href="Home.do"><button class="home">로그인</button></a> 
+      <a href="Login.do"><button class="home">로그인</button></a> 
    </div>  
 </body>
 </html> 

@@ -77,8 +77,8 @@ public class MainController extends HttpServlet {
 		 * 단순 페이지 이동
 		 */
 		//로그인 창으로 이동
-		case("/Home.do"): // 실행시 ~~.do사용
-			viewPage = "Home.jsp"; // 실행할 jsp파일
+		case("/Login.do"): // 실행시 ~~.do사용
+			viewPage = "Login.jsp"; // 실행할 jsp파일
 		break;
 		
 		//회원가입 창으로 이동 
@@ -115,7 +115,7 @@ public class MainController extends HttpServlet {
 		case("/Logout.do"): // 실행시 ~~.do사용
 			//세션끔
 			session.invalidate();
-			viewPage = "Home.jsp"; // 실행할 jsp파일
+			viewPage = "Login.jsp"; // 실행할 jsp파일
 		break;
 		
 		case("/naver.do"): // 실행시 ~~.do사용
@@ -132,10 +132,10 @@ public class MainController extends HttpServlet {
 		case("/register.do"):
 			command = new UserRegisterCommand(); // 커맨드(메소드)적기
 			command.execute(request, response, session);
-			viewPage = "SignipSuccess.jsp";
+			viewPage = "SignupSuccess.jsp";
 			break;
 		//로그인 클릭시	
-		case("/login.do"):
+		case("/loginClick.do"):
 			command = new UserLoginCommand(); // 커맨드(메소드)적기
 			command.execute(request, response, session);
 			
@@ -166,9 +166,14 @@ public class MainController extends HttpServlet {
 			if(session.getAttribute("searchEmail").equals("")) {
 				session.invalidate();
 				viewPage = "EmailSearchFail.jsp"; //실패시
+			
+			}else if(session.getAttribute("searchDeletedate")==null) {
+				viewPage = "EmailSearchSuccess.jsp"; //성공시	
+			
 			}else {
-				viewPage = "EmailSearchSuccess.jsp"; //성공시
+				viewPage = "EmailSearchWithdraw.jsp"; //탈퇴회원	
 			}
+
 			break;
 		
 		//패스워드 찾기 버튼 클릭 후
@@ -179,8 +184,11 @@ public class MainController extends HttpServlet {
 			if(session.getAttribute("searchPwd").equals("")) {
 				session.invalidate();
 				viewPage = "PwdSearchFail.jsp"; //실패시
-			}else {
+			}else if(session.getAttribute("searchDeletedate")==null) {
 				viewPage = "PwdSearchSuccess.jsp"; //성공시
+			}else {
+				session.invalidate();
+				viewPage = "PwdSearchWithdraw.jsp"; //탈퇴회원
 			}
 			
 			break;

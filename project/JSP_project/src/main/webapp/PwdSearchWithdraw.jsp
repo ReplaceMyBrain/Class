@@ -9,9 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  <script>
 	$(window).on('load', function() {
-	    alert('찾으신 password는 : ${searchPwd} 입니다');
+	    alert('탈퇴한 회원입니다.');
 	});
-	<%session.invalidate();%>
 </script>
     
  <style>
