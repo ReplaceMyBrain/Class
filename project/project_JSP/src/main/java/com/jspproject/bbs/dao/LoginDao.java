@@ -93,5 +93,41 @@ public class LoginDao {
 			return result;
 		}		
 	
+	public String loginDeletedate(String strEmail, String strPwd) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultset = null;
+		String result ="";
+				
+			try {
+				connection = dataSource.getConnection();
+				
+				String query = "SELECT deletedate FROM user WHERE email=? and pwd=?";
+				preparedStatement = connection.prepareStatement(query);
+				
+				preparedStatement.setString(1, strEmail);
+				preparedStatement.setString(2, strPwd);
+					
+				resultset = preparedStatement.executeQuery();
+				
+		      if(resultset.next()) {
+		    	  String deletedate = resultset.getString("deletedate");
+		    	  result = deletedate;
+		      } 
+		    } catch (Exception e) {
+		      e.printStackTrace();
+			}finally {
+				try {
+					//정리 다시 거꾸로 정리해주는것
+					if(resultset != null) resultset.close();
+					if(preparedStatement != null) preparedStatement.close();
+					if(connection != null) connection.close();
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			}
+			return result;
+		}		
+	
 	
 }//--------------

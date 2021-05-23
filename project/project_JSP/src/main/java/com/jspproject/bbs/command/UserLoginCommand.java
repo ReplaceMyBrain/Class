@@ -23,14 +23,18 @@ public class UserLoginCommand implements Command {
 		String loginEmail = dao.loginEmail(email,pwd);
 		//admin값 불러오기
 		String loginAdmin = dao.loginAdmin(email,pwd);
+		//deletedate값 불러오기
+		String loginDeletedate = dao.loginDeletedate(email,pwd);
 		
 		//세션에 저장 각각 따로 사용 가능
 		session.setAttribute("email", loginEmail);
 		session.setAttribute("admin", loginAdmin);
+		session.setAttribute("deletedate", loginDeletedate);
 		
 		//확인ㅁ
 		System.out.println(loginEmail);
 		System.out.println(loginAdmin);
+		System.out.println(loginDeletedate);
 
 	}
 }

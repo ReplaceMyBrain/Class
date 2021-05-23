@@ -11,8 +11,8 @@ public class UserDto {
 	String tel;
 	String address;
 	String github;
-	Timestamp withdrawDate;
-	Timestamp signupDate;
+	Timestamp creatdate;
+	Timestamp deletedate;
 	int admin;
 	int result;
 
@@ -71,23 +71,23 @@ public class UserDto {
 	public void setGithub(String github) {
 		this.github = github;
 	}
-	public Timestamp getWithdrawDate() {
-		return withdrawDate;
-	}
-	public void setWithdrawDate(Timestamp withdrawDate) {
-		this.withdrawDate = withdrawDate;
-	}
-	public Timestamp getSignupDate() {
-		return signupDate;
-	}
-	public void setSignupDate(Timestamp signupDate) {
-		this.signupDate = signupDate;
-	}
 	public int getAdmin() {
 		return admin;
 	}
 	public void setAdmin(int admin) {
 		this.admin = admin;
+	}
+	public Timestamp getCreatdate() {
+		return creatdate;
+	}
+	public void setCreatdate(Timestamp creatdate) {
+		this.creatdate = creatdate;
+	}
+	public Timestamp getDeletedate() {
+		return deletedate;
+	}
+	public void setDeletedate(Timestamp deletedate) {
+		this.deletedate = deletedate;
 	}
 
 	

@@ -66,7 +66,7 @@ public class SignupDao {
 		try {
 			connection = dataSource.getConnection();
 			
-			String query = "insert into user values (?,?,?,?,?,?,now(),'0000-00-00 00:00:00',0)";
+			String query = "INSERT INTO user (EMAIL, NAME, PWD, ADRESS, TEL, GIT, CREATEDATE, ADMIN) values (?,?,?,?,?,?,now(),0)";
 			preparedStatement = connection.prepareStatement(query);
 			
 			preparedStatement.setString(1, email);

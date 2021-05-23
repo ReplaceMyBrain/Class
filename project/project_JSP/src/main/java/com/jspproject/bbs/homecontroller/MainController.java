@@ -142,9 +142,12 @@ public class MainController extends HttpServlet {
 			//세션에 이메일값 저장해서 공백이면 로그인 실패처리시킴 사용엔 문제없지만 사실 이부분 피드백이 필요함...
 			if(session.getAttribute("email").equals("")) {
 				session.invalidate();
-				viewPage = "LoginFail.jsp"; //실패시
+				viewPage = "LoginFail.jsp"; //정보 불일치 실패시
+			}else if(session.getAttribute("deletedate")==null) {
+				viewPage = "Header.jsp"; //성공시		
 			}else {
-				viewPage = "Header.jsp"; //성공시
+				session.invalidate();
+				viewPage = "LoginWithdraw.jsp"; //탈퇴회원	
 			}
 			break;
 		
