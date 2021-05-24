@@ -34,6 +34,7 @@
      font-weight: 400;
      text-transform: capitalize;
      line-height: 3rem;
+     color : #fff;
     }   
  .footer_info p{
     max-width: 600px;
@@ -74,7 +75,7 @@
             <ul class="foot_link">
                 <li><a href="">1:1문의</a></li>
                 <li>I</li>
-                <li><a href="">기부</a></li>
+                <li><a href="Donation.do">기부</a></li>
                 <li>I</li>
                 <li><a href="TermsAndConditions.do" target='_blank'>이용약관</a></li>
                 <li>I</li>

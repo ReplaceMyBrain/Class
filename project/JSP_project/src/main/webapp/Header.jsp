@@ -82,7 +82,7 @@
     <header class="header">
        <div class="header_logo">
             
-            <a href="" class="title"><h1>마음만은 TOP 개발자</h1></a>
+            <a href="Main.do" class="title"><h1>마음만은 TOP 개발자</h1></a>
             <ul>
             
             
@@ -92,7 +92,7 @@
                 <li><a href="Signup.do" class="Guest">회원가입</a></li>
                 <li><a href="Login.do" class="Guest">로그인</a></li>
 			<% }else {%>
-                <li><a href="" class="login">마이페이지</a></li>
+                <li><a href="profile.do" class="login">마이페이지</a></li>
                 <li><a href="Logout.do" class="login">로그아웃</a></li>
 				
 			<%}%> 
@@ -104,9 +104,9 @@
     <nav>
        <div class="menu">
             <ul>
-                <li><a href="">개발자의 물건</a> </li>
-                <li><a href="">개발자의 아이디어</a> </li>
-                <li><a href="">공지사항</a> </li>
+                <li><a href="list.do">개발자의 물건</a> </li>
+                <li><a href="list2.do">개발자의 아이디어</a> </li>
+                <li><a href="list3.do">공지사항</a> </li>
             </ul>
        </div>
      </nav>

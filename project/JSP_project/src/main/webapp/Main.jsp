@@ -53,7 +53,7 @@
 
 	<div id="tool">
 	<figure>
-  	<img src="gunnar-sigurdarson-nzff_emVOfE-unsplash.jpg">
+  	<img src="img/gunnar-sigurdarson-nzff_emVOfE-unsplash.jpg">
   	<a href="list.do">
   	<figcaption>
   	<p>Dev Tool</p>
@@ -64,7 +64,7 @@
   	
   	<div id="idea">
 	<figure>
-	<img src="junior-ferreira-7esRPTt38nI-unsplash.jpg">
+	<img src="img/junior-ferreira-7esRPTt38nI-unsplash.jpg">
 	<a href="list2.do">
 	<figcaption>
 	<p>Idea</p>
@@ -75,7 +75,7 @@
 	
 	<div id="alert">
   	<figure>
-	<img src="jason-rosewell-ASKeuOZqhYU-unsplash.jpg">
+	<img src="img/jason-rosewell-ASKeuOZqhYU-unsplash.jpg">
 	<a href="list3.do">
 	<figcaption>
 	<p>Notice</p>
