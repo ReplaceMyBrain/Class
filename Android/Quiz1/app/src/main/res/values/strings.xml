@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Quiz1</string>
+    <string name="hello"> Hello World!</string>
+    <string name="hi">안녕</string>
+</resources>
