@@ -1,0 +1,2 @@
+rootProject.name = "TextViewAttr01"
+include ':app'
