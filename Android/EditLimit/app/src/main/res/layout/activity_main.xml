@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/unlimit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="무제한"
+        />
+    <EditText
+        android:id="@+id/limit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="세글자"
+        />
+
+
+
+</LinearLayout>

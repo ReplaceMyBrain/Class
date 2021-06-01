@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1234567890"
+        android:textSize="30dp"
+        />
+    <Button
+        android:id="@+id/ins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INS"
+        android:backgroundTint="#7E7A7A"
+        />
+    <Button
+        android:id="@+id/del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEL"
+        android:backgroundTint="#7E7A7A"
+        />
+    <Button
+        android:id="@+id/app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="APP"
+        android:backgroundTint="#7E7A7A"
+        />
+    <Button
+        android:id="@+id/rep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REP"
+        android:backgroundTint="#7E7A7A"
+        />
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLEAR"
+        android:backgroundTint="#7E7A7A"
+        />
+
+
+</LinearLayout>

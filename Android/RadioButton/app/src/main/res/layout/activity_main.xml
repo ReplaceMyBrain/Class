@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="2"
+        android:text="당신의 고향은?"
+        android:textSize="40dp"
+        android:gravity="center"/>
+    <RadioGroup
+        android:id="@+id/rg_01"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="7"
+        >
+        <RadioButton
+            android:id="@+id/rb_01"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:text="@string/area01"
+            />
+        <RadioButton
+            android:id="@+id/rb_02"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="@string/area02"
+            />
+        <RadioButton
+            android:id="@+id/rb_03"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="@string/area03"
+            />
+        <RadioButton
+            android:id="@+id/rb_04"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="@string/area04"
+            />
+        <RadioButton
+            android:id="@+id/rb_05"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="@string/area05"
+           />
+        <RadioButton
+            android:id="@+id/rb_06"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="@string/area06"
+            />
+        <RadioButton
+            android:id="@+id/rb_07"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="@string/area07"
+            />
+
+    </RadioGroup>
+
+</LinearLayout>

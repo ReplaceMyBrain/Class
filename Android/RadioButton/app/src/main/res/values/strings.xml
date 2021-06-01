@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RadioButton</string>
+    <string name="area01">서울</string>
+    <string name="area02">경기도</string>
+    <string name="area03">강원도</string>
+    <string name="area04">충청도</string>
+    <string name="area05">경상도</string>
+    <string name="area06">전라도</string>
+    <string name="area07">제주도</string>
+</resources>
