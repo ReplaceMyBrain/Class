@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.aoslec.menucheck.MainActivity">
+    <item
+        android:id="@+id/submenu"
+        android:title="Sub Menu"
+        >
+        <menu>
+            <group
+                android:id="@+id/exclusive_checkavle_group"
+                android:checkableBehavior="single"
+                >
+               <item
+                    android:id="@+id/red"
+                    android:title="Red"/>
+                <item
+                    android:id="@+id/green"
+                    android:title="Green"/>
+                <item
+                    android:id="@+id/blue"
+                    android:title="Blue"/>
+            </group>
+        </menu>
+    </item>
+</menu>

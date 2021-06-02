@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="버튼을 눌러 덧셈,뺄셈,곱셈,나눗셈을 해보자"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/inputNum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="숫자 1입력"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_margin="30dp"
+        />
+    <EditText
+        android:id="@+id/inputNum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="숫자 2입력"
+        android:textSize="20dp"
+        android:layout_margin="30dp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="덧셈"
+            android:backgroundTint="#000000"
+            android:textSize="30dp"
+            />
+        <Button
+            android:id="@+id/mul"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="곱셈"
+            android:backgroundTint="#000000"
+            android:textSize="30dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="뺄셈"
+            android:backgroundTint="#000000"
+            android:textSize="30dp"
+            />
+
+        <Button
+            android:id="@+id/div"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="나눗셈"
+            android:backgroundTint="#000000"
+            android:textSize="30dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

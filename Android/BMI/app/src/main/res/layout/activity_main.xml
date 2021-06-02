@@ -23,17 +23,25 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="이제 곧 여름인데             다이어트를 시작해볼까?"
+        android:text="이제 곧 여름인데"
+        android:textSize="35dp"
+        />
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="다이어트를 시작해볼까?"
         android:textSize="35dp"
         />
 
+
     <Button
+        android:id="@+id/btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="핫바디를 위해 시작해보자!!"
         android:layout_gravity="center"
         android:backgroundTint="#00EAFF"
-        android:textSize="25dp"
+        android:textSize="22dp"
         android:textColor="#615C5C"
         android:layout_marginTop="20dp"
         android:layout_margin="10dp"
@@ -62,6 +70,7 @@
             />
 
         <Button
+            android:id="@+id/btn_cm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="나의 BMI궁금해!"
@@ -75,6 +84,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/P2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -85,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/cm"/>
+            android:src="@drawable/cm" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,6 +106,7 @@
             />
 
         <EditText
+            android:id="@+id/etCm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="EX)170"
@@ -104,6 +115,7 @@
             />
 
         <Button
+            android:id="@+id/btn_kg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="다음!"
@@ -117,6 +129,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/P3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -138,14 +151,16 @@
                 />
 
             <EditText
+                android:id="@+id/etKg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="EX)170"
+                android:hint="EX)60"
                 android:textSize="40dp"
                 android:layout_gravity="center"
                 />
 
             <Button
+                android:id="@+id/btn_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="결과보기!"
@@ -159,6 +174,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/P4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -168,29 +184,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/bmi"/>
+                android:src="@drawable/bmi"
+               />
 
             <TextView
+                android:id="@+id/tvBmi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="너의 BMI는 ~~이야"
-                android:textSize="40dp"
+                android:textSize="30dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="-40dp"
                 />
 
             <TextView
+                android:id="@+id/tvBmiResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text= "~~이지"
-                android:textSize="40dp"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text= "다이어트를 시작해보는건 어때?"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:layout_gravity="center"
                 />
 
@@ -202,8 +212,9 @@
                 android:backgroundTint="#00EAFF"
                 android:textSize="25dp"
                 android:textColor="#615C5C"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_margin="10dp"
+
                 />
         </LinearLayout>
 
