@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="travelArea">
+        <item>가나</item>
+        <item>뉴질랜드</item>
+        <item>독일</item>
+        <item>미국</item>
+        <item>일본</item>
+        <item>영국</item>
+        <item>프랑스</item>
+        <item>중국</item>
+        <item>한국</item>
+        <item>호주</item>
+    </string-array>
+</resources>
