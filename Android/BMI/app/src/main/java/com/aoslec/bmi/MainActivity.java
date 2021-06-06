@@ -13,10 +13,10 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Button btnStart,btnCm,btnKg,btnResult;
-    LinearLayout p1,p2,p3,p4;
+    LinearLayout p0,p1,p2,p3,p4;
     EditText etCm,etKg;
     TextView tvBmi,tvBmiResult;
-    int cm,kg;
+    double cm,cm2,kg;
     String bmiNum,bmiResult;
 
     @Override
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btnResult=findViewById(R.id.btn_result);
 
         //레이아웃
+        p0=findViewById(R.id.P0);
         p1=findViewById(R.id.P1);
         p2=findViewById(R.id.P2);
         p3=findViewById(R.id.P3);
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 p1.setVisibility(View.VISIBLE);
+                p0.setVisibility(View.INVISIBLE);
 
             }
         });
@@ -62,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
         btnCm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    p2.setVisibility(View.VISIBLE);
+                p2.setVisibility(View.VISIBLE);
+                p1.setVisibility(View.INVISIBLE);
 
 
             }
@@ -71,8 +74,10 @@ public class MainActivity extends AppCompatActivity {
         btnKg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    p3.setVisibility(View.VISIBLE);
-                    cm=Integer.parseInt(etCm.getText().toString());
+                p3.setVisibility(View.VISIBLE);
+                p2.setVisibility(View.INVISIBLE);
+                cm=Double.parseDouble(etCm.getText().toString());
+                cm2=(cm/100)*(cm/100);
 
             }
         });
@@ -80,8 +85,10 @@ public class MainActivity extends AppCompatActivity {
         btnResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                kg=Integer.parseInt(etKg.getText().toString());
-                double bmi =(double)kg/(cm*2/100);
+                kg=Double.parseDouble(etKg.getText().toString());
+
+
+                double bmi =kg/cm2;
                 bmiNum = String.format("%.1f",bmi);
 
                 if(bmi<=18.5){
@@ -97,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 p4.setVisibility(View.VISIBLE);
+                p3.setVisibility(View.INVISIBLE);
                 tvBmi.setText("너의 BMI는 " + bmiNum + "이고");
                 tvBmiResult.setText(bmiResult+ "이야^^");
 

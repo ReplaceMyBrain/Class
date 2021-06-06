@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,13 +10,16 @@
     android:layout_gravity="center">
 
     <LinearLayout
+        android:id="@+id/P0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
         android:src="@drawable/summer"/>
 
@@ -30,7 +33,7 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="다이어트를 시작해볼까?"
-        android:textSize="35dp"
+       android:textSize="35dp"
         />
 
 
@@ -46,17 +49,19 @@
         android:layout_marginTop="20dp"
         android:layout_margin="10dp"
         />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/P1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp">
+        android:layout_gravity="center"
+        >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             android:src="@drawable/ohno"
             />
@@ -65,7 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="다이어트 전에 나의 BMI는?"
-            android:textSize="30dp"
+            android:textSize="25dp"
+            android:gravity="center"
             android:layout_marginTop="30dp"
             />
 
@@ -73,13 +79,12 @@
             android:id="@+id/btn_cm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="나의 BMI궁금해!"
+            android:text="나의 BMI가 궁금해!"
             android:layout_gravity="center"
             android:backgroundTint="#00EAFF"
-            android:textSize="25dp"
+            android:textSize="20dp"
+
             android:textColor="#615C5C"
-            android:layout_marginTop="20dp"
-            android:layout_margin="10dp"
             />
     </LinearLayout>
 
@@ -88,12 +93,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
         >
 
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             android:src="@drawable/cm" />
 
@@ -133,12 +139,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="30dp"
-            >
+            android:layout_gravity="center">
+
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
                 android:layout_gravity="center"
                 android:src="@drawable/kg"/>
 
@@ -178,11 +184,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
             >
+
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
                 android:layout_gravity="center"
                 android:src="@drawable/bmi"
                />
@@ -217,8 +224,4 @@
 
                 />
         </LinearLayout>
-
-
-
-    </LinearLayout>
-</ScrollView>
+</FrameLayout>
