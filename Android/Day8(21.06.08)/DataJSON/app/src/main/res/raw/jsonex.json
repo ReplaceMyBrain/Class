@@ -1,0 +1,27 @@
+{
+  "members_info" :
+  [
+    {
+      "name" : "James",
+      "age" : 20,
+      "hobbies" : ["수영","요리"],
+      "info" :
+      {
+        "no" : 1,
+        "id" : "abcd",
+        "pw" : "1234"
+      }
+    },
+    {
+      "name" : "Cathy",
+      "age" : 21,
+      "hobbies" : ["독서","등산"],
+      "info" :
+      {
+        "no" : 2,
+        "id" : "abcde",
+        "pw" : "12345"
+      }
+    }
+  ]
+}
