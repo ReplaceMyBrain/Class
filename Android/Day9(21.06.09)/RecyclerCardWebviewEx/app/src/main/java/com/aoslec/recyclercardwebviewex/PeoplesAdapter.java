@@ -42,7 +42,7 @@ public class PeoplesAdapter extends RecyclerView.Adapter<PeoplesAdapter.ViewHold
         holder.tv_name.setText("name : " + data.get(position).getName());
         holder.tv_dept.setText("dept : " + data.get(position).getDept());
         holder.tv_phone.setText("phone : " + data.get(position).getPhone());
-        holder.webView.loadDataWithBaseURL(null,htmlData(data.get(position).getImg()),"text/html,","UTF-8",null);
+        holder.webView.loadDataWithBaseURL(null,htmlData(data.get(position).getImg()),"text/html","UTF-8",null);
     }
 
     @Override
@@ -76,7 +76,8 @@ public class PeoplesAdapter extends RecyclerView.Adapter<PeoplesAdapter.ViewHold
                 "</head>" +
                 "<body>"+
                 "<center>"+
-                "<img src=\"http://192.168.2.3:8080/test/"+location+"\" style=\"width: 100%; height: auto;\">"+
+                "<img src=\"http://172.30.1.11:8080/test/"+location+"\" style=\"width: 100%; height: auto;\">"+
+                "</center>"+
                 "</body>" +
                 "</html>";
 
