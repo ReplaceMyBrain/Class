@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.InsertActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:text="학생 정보 입력"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_weight="3"
+        />
+
+    <EditText
+        android:id="@+id/insert_code"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:hint="학번(4자리)"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/insert_name"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:hint="이름(10자리)"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/insert_dept"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:hint="전공(12자리)"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/insert_phone"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:hint="전화번호(12자리)"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:id="@+id/insert_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:text="입력"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        />
+
+
+
+</LinearLayout>
