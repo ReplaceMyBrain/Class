@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="학생정보 삭제"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:textStyle="bold"
+        android:layout_weight="3"/>
+
+    <EditText
+        android:id="@+id/delete_code"
+        android:hint="학번(4자리)"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:enabled="false" />
+    <EditText
+        android:id="@+id/delete_name"
+        android:hint="이름(10자리)"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:enabled="false"/>
+    <EditText
+        android:id="@+id/delete_dept"
+        android:hint="전공(12자리)"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:enabled="false"/>
+    <EditText
+        android:id="@+id/delete_phone"
+        android:hint="전화번호(12자리)"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:enabled="false"/>
+    <Button
+        android:id="@+id/delete_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:text="삭제"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_weight="1"/>
+</LinearLayout>

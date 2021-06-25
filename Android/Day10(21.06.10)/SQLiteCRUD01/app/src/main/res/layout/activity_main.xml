@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:text="DB CRUD on SQLite"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        android:layout_weight="3"/>
+
+    <Button
+        android:id="@+id/btn_insert"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:text="Insert"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:text="Update"
+        android:textSize="20dp" />
+    <Button
+        android:id="@+id/btn_delete"
+        android:text="Delete"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_margin="5dp"
+        android:textSize="20dp"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/btn_selectA"
+        android:text="Select All"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_margin="5dp"
+        android:textSize="20dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
