@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.springlec.addressbook.dao.IDao">
+	
+	<select id="listDao" resultType="com.springlec.addressbook.dto.ContentDto">
+		SELECT * FROM ADDRESSBOOK ORDER BY AID DESC
+	</select>
+	
+	<select id="viewDao" resultType="com.springlec.addressbook.dto.ContentDto" >
+		SELECT * FROM ADDRESSBOOK WHERE AID=#{param1}
+	</select>
+
+	<insert id="writeDao">
+		INSERT INTO ADDRESSBOOK (ANAME,ACONTENT,AADDRESS,AEMAIL,ARELATION) VALUES (#{param1}, #{param2}, #{param3}, #{param4}, #{param5})	
+	</insert>
+	
+	<delete id="deleteDao">
+		DELETE FROM ADDRESSBOOK WHERE AID=#{param1}
+	</delete>
+	
+	<update id="modifyDao" >
+		UPDATE ADDRESSBOOK SET ANAME =#{param2}, ACONTENT = #{param3}, AADDRESS = #{param4}, AEMAIL = #{param5}, ARELATION = #{param6} WHERE AID= #{param1}
+	</update>
+	
+	<select id="listQuery" parameterType="String" resultType="com.springlec.addressbook.dto.ContentDto" >
+		SELECT * FROM ADDRESSBOOK WHERE ${param1} LIKE CONCAT('%',#{param2},'%')
+	</select>
+	
+
+</mapper>
