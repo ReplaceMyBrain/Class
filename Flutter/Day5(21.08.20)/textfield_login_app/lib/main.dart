@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:textfield_login_app/bitcoin.dart';
+import 'package:textfield_login_app/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -89,27 +91,29 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-}
 
-void okAlert(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text("환영합니다"),
-        content: Text('신분이 확인되었습니다'),
-        actions: [
-          ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.blue),
+  void okAlert(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("환영합니다"),
+          content: Text('신분이 확인되었습니다'),
+          actions: [
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.blue),
+              ),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return home();
+                }));
+              },
+              child: Text("OK"),
             ),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: Text("OK"),
-          ),
-        ],
-      );
-    },
-  );
+          ],
+        );
+      },
+    );
+  }
 }
