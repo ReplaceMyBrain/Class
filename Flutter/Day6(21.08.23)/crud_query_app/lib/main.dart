@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("JSON Test"),
+        title: Text("Query for CRUD"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -129,11 +129,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
 //async! await!
   Future<String> getJSONData() async {
-    var url = Uri.parse("http://localhost:8080/Flutter/student.json");
+    var url =
+        Uri.parse("http://localhost:8080/Flutter/student_query_flutter.jsp");
     var response = await http.get(url);
     // print(response.body);
     setState(() {
-      var dataConvertedJSON = json.decode(response.body);
+      var dataConvertedJSON = json.decode(utf8.decode(response.bodyBytes));
       List result = dataConvertedJSON['results'];
       data.addAll(result);
     });
