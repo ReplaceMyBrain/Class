@@ -88,8 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
     print(response.body);
     setState(() {
       var dataConvertedJSON = json.decode(utf8.decode(response.bodyBytes));
+      print(dataConvertedJSON);
       List result = dataConvertedJSON['results'];
       data.addAll(result);
+      print(data);
     });
 
     return "a";
