@@ -51,3 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+  var night = false;
+  var sunday = false;
+  var hoilday = false;
