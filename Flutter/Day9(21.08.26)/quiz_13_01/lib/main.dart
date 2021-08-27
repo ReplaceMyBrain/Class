@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
         )),
       );
       setState(() {
-        map.add(marker);
+        markers.add(marker);
       });
     }
   }
